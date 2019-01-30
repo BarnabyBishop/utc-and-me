@@ -23,10 +23,12 @@ class App extends Component {
         });
     }
 
+    padNumber(number) {
+        return number < 10 ? `0${number}` : number.toString();
+    }
+
     formatLocal(date) {
-        const monthNumber = date.getMonth() + 1;
-        const month = monthNumber < 10 ? `0${monthNumber}` : monthNumber.toString();
-        return `${date.getFullYear()}-${month}-${date.getDate()}T${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+        return `${date.getFullYear()}-${this.padNumber(date.getMonth() + 1)}-${this.padNumber(date.getDate())}T${this.padNumber(date.getHours())}:${this.padNumber(date.getMinutes())}:${this.padNumber(date.getSeconds())}`;
     }
 
     render(props, state) {
