@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "start": "parcel index.html",
-        "build": "parcel build index.html"
+        "build": "rm -rf docs/* && rm -rf dist/* && parcel build index.html && cp -a dist/. docs"
     },
     "keywords": [],
     "author": "",
